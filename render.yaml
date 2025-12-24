@@ -3,7 +3,7 @@ services:
     name: difficult-conversations-training
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app:app"
+    startCommand: "gunicorn -c gunicorn_config.py app:app"
     envVars:
       - key: OPENAI_API_KEY
         sync: false
@@ -12,4 +12,6 @@ services:
       - key: FLASK_ENV
         value: production
       - key: SESSION_TIMEOUT
-        value: 3600
+        value: "3600"
+      - key: PORT
+        value: "10000"

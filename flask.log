@@ -522,3 +522,13 @@
 127.0.0.1 - - [24/Dec/2025 14:02:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 127.0.0.1 - - [24/Dec/2025 14:05:11] "GET / HTTP/1.1" 200 -
 127.0.0.1 - - [24/Dec/2025 14:05:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/config.py', reloading
+[STARTUP] OPENAI_API_KEY present: True
+[STARTUP] API Key starts with: sk-proj-d_...
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195

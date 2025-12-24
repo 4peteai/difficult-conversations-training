@@ -2,9 +2,18 @@ from flask import Flask, render_template
 from flask_wtf.csrf import CSRFProtect
 from config import Config
 from controllers.module_controller import module_bp
+import os
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+# Debug logging for deployment
+print(f"[STARTUP] OPENAI_API_KEY present: {bool(Config.OPENAI_API_KEY)}")
+if Config.OPENAI_API_KEY:
+    print(f"[STARTUP] API Key starts with: {Config.OPENAI_API_KEY[:10]}...")
+else:
+    print("[ERROR] OPENAI_API_KEY environment variable is not set!")
+    print(f"[DEBUG] Available env vars: {list(os.environ.keys())}")
 
 csrf = CSRFProtect(app)
 
