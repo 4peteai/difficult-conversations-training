@@ -1,0 +1,11 @@
+Flask==3.1.0
+openai==1.58.1
+python-dotenv==1.0.1
+pydantic==2.10.5
+Flask-WTF==1.2.2
+gunicorn==21.2.0
+pytest==8.3.4
+pytest-cov==6.0.0
+mypy==1.14.1
+flake8==7.1.1
+black==24.10.0

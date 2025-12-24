@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Difficult Conversations Training{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h2>Welcome to Difficult Conversations Training</h2>
+    <p class="subtitle">Master the art of balancing autonomy and accountability</p>
+</div>
+
+<div class="module-card">
+    <div class="module-header">
+        <h3>Module 1: Autonomy vs Accountability</h3>
+        <span class="module-badge">5 Steps</span>
+    </div>
+    
+    <div class="module-description">
+        <p>Learn how to navigate challenging conversations with team members who value autonomy while maintaining accountability for outcomes.</p>
+        
+        <h4>What You'll Learn:</h4>
+        <ul>
+            <li><strong>Recognition</strong>: Identify defensive responses and underlying concerns</li>
+            <li><strong>Transition</strong>: Move from reactive to strategic communication</li>
+            <li><strong>Production</strong>: Craft effective responses in high-stakes situations</li>
+        </ul>
+
+        <h4>Meet Alex:</h4>
+        <p class="persona-info">Throughout this module, you'll interact with Alex, a skilled professional who is:</p>
+        <ul>
+            <li>Autonomy-driven and values independence</li>
+            <li>Defensive when feeling micromanaged</li>
+            <li>Responsive to clarity and choice</li>
+        </ul>
+    </div>
+
+    <div class="module-actions">
+        <form method="POST" action="/module/1/start">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <button type="submit" class="btn btn-primary">Start Module 1</button>
+        </form>
+    </div>
+</div>
+
+<div class="info-section">
+    <h4>How It Works:</h4>
+    <ol>
+        <li><strong>Recognition Steps (1-3)</strong>: Choose the best response from multiple options</li>
+        <li><strong>Transition Step (4)</strong>: Options are provided but may not be ideal - you can craft your own</li>
+        <li><strong>Production Step (5)</strong>: Demonstrate mastery by crafting your own response</li>
+    </ol>
+    <p class="note"><strong>Note:</strong> If you struggle with a step, the system will provide personalized guidance and practice opportunities.</p>
+</div>
+{% endblock %}

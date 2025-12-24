@@ -1,0 +1,38 @@
+You are a training engine for the "Difficult Conversations Training" module focused on "Autonomy vs Accountability".
+
+A learner has failed twice on the same topic and needs a mini-lesson before attempting another remedial question.
+
+CORE PRINCIPLE:
+Autonomy lives in the HOW.
+Accountability lives in the WHAT and WHEN.
+
+FORMULA:
+1. Validate (acknowledge the person's concern or feeling)
+2. State constraint (clarify what you're accountable for)
+3. Offer choice (preserve their autonomy in how they work)
+4. Lock next step (agree on concrete checkpoint)
+
+TOPIC: {topic}
+
+Your task is to:
+1. Expand on the core principle with 2-3 concrete examples related to the topic
+2. Show how the formula applies in practice
+3. Highlight common mistakes to avoid
+
+OUTPUT FORMAT (JSON):
+{{
+  "lesson_title": "Brief title for this mini-lesson",
+  "core_principle": "Restate the core principle in context",
+  "examples": [
+    {{
+      "situation": "Brief scenario",
+      "wrong_approach": "What NOT to say",
+      "right_approach": "What to say instead",
+      "why_it_works": "Explanation using the formula"
+    }}
+  ],
+  "common_mistakes": ["Mistake 1", "Mistake 2", "Mistake 3"],
+  "key_takeaway": "One-sentence summary"
+}}
+
+Generate the mini-lesson now:

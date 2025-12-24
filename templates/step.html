@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+
+{% block title %}Step {{ step.id }} - Module 1{% endblock %}
+
+{% block content %}
+<div class="progress-tracker">
+    <div class="progress-label">Progress</div>
+    <div class="progress-steps">
+        {% for i in range(1, 6) %}
+            <div class="progress-step {% if i < step.id %}completed{% elif i == step.id %}active{% endif %}">
+                <div class="step-circle">{{ i }}</div>
+                <div class="step-label">Step {{ i }}</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="step-container">
+    <div class="step-header">
+        <h2>Step {{ step.id }}: {{ step.type|title }}</h2>
+        <span class="step-badge">{{ step.type|title }}</span>
+    </div>
+
+    <div class="scenario-box">
+        <h3>Scenario</h3>
+        <div class="scenario-content">
+            {{ step.scenario|replace('\n', '<br>')|safe }}
+        </div>
+    </div>
+
+    {% if feedback %}
+    <div class="feedback-box {% if feedback.passed %}success{% else %}error{% endif %}" id="feedbackBox">
+        <h4>{% if feedback.passed %}✓ Correct!{% else %}✗ Not quite{% endif %}</h4>
+        <p>{{ feedback.feedback|replace('\n', '<br>')|safe }}</p>
+        {% if feedback.score is not none %}
+            <div class="score-display">
+                <strong>Score:</strong> {{ "%.1f"|format(feedback.score) }}/10
+                {% if feedback.dimensions %}
+                    <div class="dimensions">
+                        <span class="dimension">De-escalation: {{ feedback.dimensions.de_escalation }}/2</span>
+                        <span class="dimension">Validation: {{ feedback.dimensions.validation }}/2</span>
+                        <span class="dimension">Clarity: {{ feedback.dimensions.clarity }}/2</span>
+                        <span class="dimension">Autonomy: {{ feedback.dimensions.autonomy }}/2</span>
+                        <span class="dimension">Next step: {{ feedback.dimensions.next_step }}/2</span>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if gold_response %}
+            <div class="gold-response">
+                <h5>Gold Standard Response:</h5>
+                <p>{{ gold_response|replace('\n', '<br>')|safe }}</p>
+            </div>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if not passed and (not feedback or not feedback.passed) %}
+    <form method="POST" action="/module/1/step/{{ step.id }}/submit" class="answer-form" id="stepForm">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        {% if step.options %}
+        <div class="options-container">
+            <h3>Choose your response:</h3>
+            {% for key, value in step.options.items() %}
+            <label class="option-label">
+                <input type="radio" name="answer" value="{{ key }}" {% if not step.allow_free_form %}required{% endif %}>
+                <div class="option-content">
+                    <strong>{{ key }}.</strong> {{ value|safe }}
+                </div>
+            </label>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if step.allow_free_form %}
+        <div class="freeform-container">
+            {% if step.options %}
+                <p class="or-divider">OR craft your own response:</p>
+            {% else %}
+                <h3>Your response:</h3>
+            {% endif %}
+            <textarea 
+                id="freeFormAnswer"
+                name="free_form_answer" 
+                rows="6" 
+                placeholder="Type your response here..."
+                {% if not step.options %}required{% endif %}
+            >{% if previous_answer and previous_answer not in ['A', 'B', 'C', 'D'] %}{{ previous_answer }}{% endif %}</textarea>
+            <p class="hint">Think about: validation, clarity, autonomy, and next steps.</p>
+        </div>
+        {% endif %}
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+                <span class="btn-text">Submit Answer</span>
+                <span class="btn-loading" style="display: none;">
+                    <span class="loading-spinner"></span>
+                    Generating<span class="loading-dots"></span>
+                </span>
+            </button>
+        </div>
+    </form>
+    
+    <script>
+    (function() {
+        const form = document.getElementById('stepForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        
+        {% if step.options and step.allow_free_form %}
+        // Conditional validation: either radio option OR free-form answer required
+        form.addEventListener('submit', function(e) {
+            const radioSelected = document.querySelector('input[name="answer"]:checked');
+            const freeFormAnswer = document.getElementById('freeFormAnswer') ? 
+                document.getElementById('freeFormAnswer').value.trim() : '';
+            
+            if (!radioSelected && !freeFormAnswer) {
+                e.preventDefault();
+                alert('Please either select an option (A-D) or write your own response.');
+                return false;
+            }
+        });
+        {% endif %}
+        
+        // Loading state handler (applies to all steps)
+        form.addEventListener('submit', function(e) {
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-flex';
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+            submitBtn.style.cursor = 'not-allowed';
+            
+            // Animate dots
+            animateDots();
+        });
+        
+        function animateDots() {
+            const dotsElement = document.querySelector('.loading-dots');
+            if (!dotsElement) return;
+            
+            let dots = 0;
+            const interval = setInterval(function() {
+                if (!submitBtn.disabled) {
+                    clearInterval(interval);
+                    return;
+                }
+                dots = (dots + 1) % 4;
+                dotsElement.textContent = '.'.repeat(dots);
+            }, 500);
+        }
+    })();
+    </script>
+    
+    <style>
+    .btn-loading {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .loading-spinner {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+    
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    
+    .loading-dots {
+        display: inline-block;
+        min-width: 1.5em;
+        text-align: left;
+    }
+    
+    button:disabled {
+        cursor: not-allowed !important;
+        opacity: 0.7;
+    }
+    </style>
+    
+    {% if feedback %}
+    <script>
+    // Auto-scroll to feedback on page load
+    (function() {
+        const feedbackBox = document.getElementById('feedbackBox');
+        if (feedbackBox) {
+            setTimeout(function() {
+                feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+    })();
+    </script>
+    {% endif %}
+    {% else %}
+    <div class="next-step-action">
+        {% if next_step_id %}
+        <form method="GET" action="/module/1/step/{{ next_step_id }}">
+            <button type="submit" class="btn btn-success btn-large">Continue to Step {{ next_step_id }} →</button>
+        </form>
+        {% else %}
+        <a href="/module/1/complete" class="btn btn-success btn-large">View Final Results →</a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+
+<div class="help-section">
+    <details>
+        <summary>Need a hint?</summary>
+        <div class="hint-content">
+            <p><strong>Remember the formula:</strong></p>
+            <ol>
+                <li>Validate the person's concern</li>
+                <li>State your constraint clearly</li>
+                <li>Offer choice in the "how"</li>
+                <li>Lock in a concrete next step</li>
+            </ol>
+        </div>
+    </details>
+</div>
+{% endblock %}

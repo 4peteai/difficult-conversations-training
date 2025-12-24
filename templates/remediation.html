@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Remediation - Module 1{% endblock %}
+
+{% block content %}
+<div class="remediation-container">
+    <div class="remediation-header">
+        <h2>Let's Practice This Concept</h2>
+        <p class="subtitle">Understanding is the foundation of mastery</p>
+        {% if failure_count >= 2 %}
+        <div class="attempt-indicator">Attempt {{ failure_count }}</div>
+        {% endif %}
+    </div>
+
+    {% if content and not feedback_message %}
+    <div class="explanation-box error">
+        <h3>What You Need to Know</h3>
+        <div class="content-text">
+            <strong>Your previous answer was incorrect. Here's why:</strong><br><br>
+            {{ content|replace('\n', '<br>')|safe }}
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="practice-section">
+        <h3>Practice Scenario</h3>
+        <div class="scenario-box">
+            <div class="scenario-content">
+                {{ question|replace('\n', '<br>')|safe }}
+            </div>
+        </div>
+
+        {% if feedback_message %}
+        <div class="feedback-box error">
+            <h4>✗ Incorrect</h4>
+            <p>{{ feedback_message }}</p>
+        </div>
+        {% endif %}
+
+        <form method="POST" action="/module/1/remediation/submit" class="answer-form" id="remediationForm">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            
+            {% if options %}
+            <div class="options-container">
+                <h3>Choose your response:</h3>
+                {% for key, value in options.items() %}
+                <label class="option-label">
+                    <input type="radio" name="answer" value="{{ key }}" required>
+                    <div class="option-content">
+                        <strong>{{ key }}.</strong> {{ value|safe }}
+                    </div>
+                </label>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="remediationSubmitBtn">
+                    <span class="btn-text">Submit Practice Answer</span>
+                    <span class="btn-loading" style="display: none;">
+                        <span class="loading-spinner"></span>
+                        Checking<span class="loading-dots"></span>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="encouragement">
+        <p>💡 <strong>Remember:</strong> These conversations are challenging. Each attempt helps you build the skills to handle them effectively.</p>
+    </div>
+</div>
+
+<script>
+(function() {
+    const form = document.getElementById('remediationForm');
+    const submitBtn = document.getElementById('remediationSubmitBtn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    
+    // Loading state handler
+    form.addEventListener('submit', function(e) {
+        // Show loading state
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline-flex';
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+        submitBtn.style.cursor = 'not-allowed';
+        
+        // Animate dots
+        animateDots();
+    });
+    
+    function animateDots() {
+        const dotsElement = document.querySelector('.loading-dots');
+        if (!dotsElement) return;
+        
+        let dots = 0;
+        const interval = setInterval(function() {
+            if (!submitBtn.disabled) {
+                clearInterval(interval);
+                return;
+            }
+            dots = (dots + 1) % 4;
+            dotsElement.textContent = '.'.repeat(dots);
+        }, 500);
+    }
+})();
+</script>
+
+<style>
+.btn-loading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-dots {
+    display: inline-block;
+    min-width: 1.5em;
+    text-align: left;
+}
+
+button:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.7;
+}
+</style>
+{% endblock %}

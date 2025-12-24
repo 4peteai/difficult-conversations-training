@@ -1,0 +1,524 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.7.4:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+127.0.0.1 - - [24/Dec/2025 11:04:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:28:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:28:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:28:32] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:28:32] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:28:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:29:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:33:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:33:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:33:10] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:33:10] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:33:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:33:17] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:33:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:33:19] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:33:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:33:22] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:33:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:33:24] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:33:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:33:27] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:33:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:33:29] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:33:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:33:48] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:33:48] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:33:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:34:13] "[32mPOST /module/1/remediation/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:34:13] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:34:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:40:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:44:31] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:44:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:44:51] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:44:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:44:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:44:55] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:44:55] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:44:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:44:57] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:44:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:44:59] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:44:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:45:01] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:45:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:45:03] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:45:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:45:08] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:45:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:45:09] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:45:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:45:11] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:45:26] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:45:26] "[32mGET /module/1/remediation HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:45:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:45:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:45:27] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:45:27] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:45:53] "[31m[1mPOST /module/1/remediation/submit HTTP/1.1[0m" 400 -
+127.0.0.1 - - [24/Dec/2025 11:45:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:45:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:45:59] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:45:59] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:45:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:46:01] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:46:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:46:03] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:46:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:46:05] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:46:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:46:07] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:46:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:46:09] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:46:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:46:11] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:46:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:46:20] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:46:20] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:46:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/controllers/module_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/controllers/module_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+127.0.0.1 - - [24/Dec/2025 11:53:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:53:39] "[32mGET /module/1/remediation HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:53:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:53:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:53:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:53:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:53:46] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:53:46] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:53:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:53:49] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:53:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:53:51] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:53:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:53:53] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:53:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:53:55] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:53:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:53:57] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:53:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:53:59] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:53:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:54:21] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:54:21] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:54:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:55:07] "[32mPOST /module/1/remediation/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:55:07] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:55:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:58:51] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:58:51] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:58:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:59:45] "[32mPOST /module/1/remediation/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 11:59:45] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:59:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 11:59:58] "POST /module/1/step/4/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 11:59:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:00:13] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:00:13] "GET /module/1/complete HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:00:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:00:39] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:00:39] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:00:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:00:42] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:00:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:00:43] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:00:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:00:46] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:00:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:00:48] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:00:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:00:51] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:00:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:00:52] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:00:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:01:05] "POST /module/1/step/4/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:01:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:02:03] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:02:03] "GET /module/1/complete HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:02:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/controllers/module_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/controllers/module_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/controllers/module_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+127.0.0.1 - - [24/Dec/2025 12:06:33] "GET / HTTP/1.1" 200 -
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/controllers/module_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/controllers/module_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+127.0.0.1 - - [24/Dec/2025 12:08:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:08:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:08:11] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:08:11] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:08:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:08:14] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:08:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:08:16] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:08:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:08:17] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:08:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:08:18] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:08:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:08:21] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:08:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:08:22] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:08:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:08:58] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:08:58] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:08:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:09:25] "[32mPOST /module/1/remediation/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:09:25] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:09:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:09:39] "POST /module/1/step/4/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:09:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:09:47] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:09:47] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:09:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:12:15] "[32mPOST /module/1/step/5/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:12:15] "GET /module/1/complete HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:12:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:24:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:24:40] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:24:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:24:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:24:49] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:24:49] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:24:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:24:52] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:24:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:24:58] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:24:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:25:01] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:25:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:25:08] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:25:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:25:11] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:25:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:25:13] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:25:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:26:02] "POST /module/1/step/4/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:26:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:26:16] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:26:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:26:29] "[32mPOST /module/1/step/5/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:26:29] "GET /module/1/complete HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:26:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/services/llm_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/services/evaluation_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/tests/test_llm_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/tests/test_llm_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/tests/test_llm_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/tests/test_llm_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/tests/test_llm_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+127.0.0.1 - - [24/Dec/2025 12:33:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:33:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:33:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:33:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:33:08] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:33:08] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:33:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:33:10] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:33:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:33:12] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:33:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:33:14] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:33:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:33:15] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:33:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:33:17] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:33:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:33:18] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:33:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:33:50] "POST /module/1/step/4/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:33:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:34:01] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:34:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:34:17] "[32mPOST /module/1/step/5/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:34:17] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:34:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:34:40] "[32mPOST /module/1/remediation/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:34:40] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:34:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 12:35:00] "[32mPOST /module/1/step/5/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 12:35:00] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 12:35:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/models/session.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/models/session.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/services/training_engine.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/services/training_engine.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/services/training_engine.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/services/training_engine.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/controllers/module_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/services/training_engine.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/controllers/module_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+127.0.0.1 - - [24/Dec/2025 13:08:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:08:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:09:09] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:09:09] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:09:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:09:11] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:09:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:09:12] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:09:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:09:15] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:09:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:09:27] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:09:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:09:33] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:09:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:09:36] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:09:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:10:07] "POST /module/1/step/4/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:10:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:10:30] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:10:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:10:43] "[32mPOST /module/1/step/5/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:10:43] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:10:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/services/training_engine.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/services/training_engine.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/tests/test_training_engine.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/tests/test_evaluation_service.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/tests/test_session_manager.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+127.0.0.1 - - [24/Dec/2025 13:26:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:26:19] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:28:01] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:28:01] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:28:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:28:29] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:28:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:28:34] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:28:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:28:50] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:28:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:28:53] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:28:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:29:15] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:29:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:29:18] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:29:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:30:30] "POST /module/1/step/4/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:30:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:30:47] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:30:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:31:08] "[32mPOST /module/1/step/5/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:31:08] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:31:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:32:09] "[32mPOST /module/1/remediation/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:32:09] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:32:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:33:15] "[32mPOST /module/1/step/5/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:33:15] "GET /module/1/complete HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:33:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:35:04] "[32mGET /module/1/step/5 HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:35:06] "[32mGET /module/1/step/4 HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:35:12] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:35:12] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:35:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:35:17] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:35:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:35:18] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:35:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:35:21] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:35:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:35:23] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:35:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:35:29] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:35:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:35:31] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:35:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:37:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:37:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:37:27] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:37:27] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:37:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:37:31] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:37:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:37:35] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:37:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:37:37] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:37:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:37:39] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:37:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:37:43] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:37:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:37:50] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:37:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:37:59] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:37:59] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:37:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:39:09] "[32mPOST /module/1/remediation/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:39:09] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:39:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:39:27] "POST /module/1/step/4/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:39:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:39:51] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:39:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:40:08] "[32mPOST /module/1/step/5/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:40:08] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:40:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:46:59] "POST /module/1/remediation/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:46:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:48:14] "[32mPOST /module/1/remediation/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:48:14] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:48:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:53:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:28] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:53:32] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:53:32] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:53:35] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:53:37] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:53:39] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:53:41] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:53:44] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:53:45] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:53:58] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:53:58] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:53:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:54:04] "POST /module/1/remediation/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:54:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:56:46] "[32mPOST /module/1/remediation/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:56:46] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:56:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:57:02] "POST /module/1/step/4/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:57:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:57:05] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:57:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 13:57:42] "[32mPOST /module/1/step/5/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:57:42] "[32mGET /module/1/complete HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 13:57:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 13:57:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:00:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:00:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:00:28] "[32mPOST /module/1/start HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 14:00:28] "GET /module/1/step/1 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:00:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:00:31] "POST /module/1/step/1/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:00:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:00:32] "GET /module/1/step/2 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:00:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:00:35] "POST /module/1/step/2/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:00:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:00:37] "GET /module/1/step/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:00:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:00:39] "POST /module/1/step/3/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:00:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:00:41] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:00:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:00:56] "[32mPOST /module/1/step/4/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 14:00:56] "GET /module/1/remediation HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:00:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:01:16] "POST /module/1/remediation/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:01:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:01:40] "[32mPOST /module/1/remediation/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 14:01:40] "GET /module/1/step/4 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:01:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:02:00] "POST /module/1/step/4/submit HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:02:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:02:03] "GET /module/1/step/5 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:02:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:02:18] "[32mPOST /module/1/step/5/submit HTTP/1.1[0m" 302 -
+127.0.0.1 - - [24/Dec/2025 14:02:18] "GET /module/1/complete HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:02:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [24/Dec/2025 14:05:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Dec/2025 14:05:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Module Complete - Difficult Conversations Training{% endblock %}
+
+{% block content %}
+<div class="completion-container">
+    <div class="completion-header">
+        <div class="success-icon">✓</div>
+        <h2>Congratulations!</h2>
+        <p class="subtitle">You've completed Module 1: Autonomy vs Accountability</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value">{{ history|length }}</div>
+            <div class="stat-label">Total Attempts</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-value">{{ history|selectattr('correct')|list|length }}</div>
+            <div class="stat-label">Correct Answers</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-value">{{ history|selectattr('score')|list|length }}</div>
+            <div class="stat-label">Free-Form Responses</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Steps Completed</div>
+        </div>
+    </div>
+
+    <div class="performance-summary">
+        <h3>Your Journey</h3>
+        <div class="timeline">
+            {% set ns = namespace(step_counts={}, step_attempts={}) %}
+            
+            {% for record in history %}
+                {% if record.step_id not in ns.step_counts %}
+                    {% set _ = ns.step_counts.update({record.step_id: 0}) %}
+                {% endif %}
+                {% set _ = ns.step_counts.update({record.step_id: ns.step_counts[record.step_id] + 1}) %}
+            {% endfor %}
+            
+            {% for record in history %}
+                {% if record.step_id not in ns.step_attempts %}
+                    {% set _ = ns.step_attempts.update({record.step_id: 0}) %}
+                {% endif %}
+                {% set _ = ns.step_attempts.update({record.step_id: ns.step_attempts[record.step_id] + 1}) %}
+                
+                <div class="timeline-item {% if record.correct %}success{% else %}retry{% endif %}">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <strong>Question {{ record.step_id }}{% if ns.step_counts[record.step_id] > 1 %} — Attempt {{ ns.step_attempts[record.step_id] }}{% endif %}</strong>
+                            <span class="timeline-result">
+                                {% if record.correct %}✓ Passed{% else %}Retry{% endif %}
+                            </span>
+                        </div>
+                        {% if record.score is not none %}
+                            <div class="timeline-score">Score: {{ "%.1f"|format(record.score) }}/10</div>
+                        {% endif %}
+                        {% if record.timestamp %}
+                            <div class="timeline-timestamp">{{ record.timestamp.strftime('%I:%M %p') }}</div>
+                        {% endif %}
+                        <div class="timeline-answer">{{ record.answer[:100]|safe }}{% if record.answer|length > 100 %}...{% endif %}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="key-takeaways">
+        <h3>Key Takeaways</h3>
+        <div class="takeaway-box">
+            <h4>The Core Principle</h4>
+            <p><strong>Autonomy lives in the <em>how</em>.</strong><br>
+            <strong>Accountability lives in the <em>what and when</em>.</strong></p>
+        </div>
+        
+        <div class="takeaway-box">
+            <h4>The Formula</h4>
+            <ol>
+                <li><strong>Validate</strong> - Acknowledge their concern</li>
+                <li><strong>State constraint</strong> - Be clear about what and when</li>
+                <li><strong>Offer choice</strong> - Give autonomy in the how</li>
+                <li><strong>Lock next step</strong> - Agree on concrete action</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="next-steps">
+        <h3>What's Next?</h3>
+        <p>You've mastered the fundamentals of balancing autonomy and accountability. Apply these skills in your next challenging conversation!</p>
+        
+        <div class="action-buttons">
+            <form method="POST" action="/module/1/start">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <button type="submit" class="btn btn-secondary">Retake Module</button>
+            </form>
+            <a href="/" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+
+    <div class="completion-timestamp">
+        <p>Completed on {{ completed_at.strftime('%B %d, %Y at %I:%M %p') if completed_at else 'N/A' }}</p>
+    </div>
+</div>
+{% endblock %}
