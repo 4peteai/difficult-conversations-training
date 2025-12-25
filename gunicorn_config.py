@@ -18,9 +18,26 @@ def on_starting(server):
     print("GUNICORN STARTING - Environment Check:")
     print(f"  PORT: {os.getenv('PORT', 'not set')}")
     print(f"  FLASK_ENV: {os.getenv('FLASK_ENV', 'not set')}")
-    print(f"  OPENAI_API_KEY: {'SET' if os.getenv('OPENAI_API_KEY') else 'NOT SET'}")
-    if os.getenv('OPENAI_API_KEY'):
-        key = os.getenv('OPENAI_API_KEY')
-        print(f"  OPENAI_API_KEY length: {len(key)}")
-        print(f"  OPENAI_API_KEY prefix: {key[:15]}...")
+    
+    raw_key = os.getenv('OPENAI_API_KEY')
+    print(f"  OPENAI_API_KEY: {'SET' if raw_key else 'NOT SET'}")
+    
+    if raw_key:
+        print(f"  Raw key length: {len(raw_key)}")
+        print(f"  Raw key first 15 chars: '{raw_key[:15]}'")
+        print(f"  Raw key last 10 chars: '{raw_key[-10:]}'")
+        
+        if raw_key.startswith('"') or raw_key.startswith("'"):
+            print("  ⚠️  WARNING: API key contains quotes!")
+            print("  ⚠️  This will cause authentication to fail")
+            print("  ⚠️  Remove quotes in Render environment variables")
+        
+        stripped = raw_key.strip().strip('"').strip("'")
+        if stripped != raw_key:
+            print(f"  After strip would be: '{stripped[:15]}'")
+        
+        if not stripped.startswith('sk-'):
+            print("  ⚠️  WARNING: API key doesn't start with 'sk-'")
+            print("  ⚠️  This appears to be an invalid or placeholder key")
+    
     print("=" * 60)

@@ -1,0 +1,120 @@
+================================================================================
+RENDER DEPLOYMENT FIX - API Key Validation Enhancement
+================================================================================
+
+PROBLEM:
+--------
+Application fails on Render with "OpenAI API key is required" error even when
+the OPENAI_API_KEY environment variable is set in Render dashboard.
+
+ROOT CAUSE:
+-----------
+Most common issue: Environment variable value in Render contains quotes:
+  Wrong: "sk-proj-abc123..."
+  Right: sk-proj-abc123...
+
+Other issues:
+- Whitespace before/after the key
+- Using placeholder/invalid key format
+- Key doesn't start with 'sk-'
+
+SOLUTION:
+---------
+Enhanced validation and auto-correction in 4 files:
+
+1. config.py
+   - Comprehensive environment variable diagnostics
+   - Detects and reports quotes, whitespace, invalid formats
+   - Validates key starts with 'sk-' and minimum length
+   - Clear error messages pointing to exact problem
+
+2. services/llm_service.py
+   - Auto-strips quotes and whitespace from API key
+   - Validates format before creating OpenAI client
+   - Better error messages with key prefix shown
+
+3. gunicorn_config.py
+   - Enhanced startup logging showing raw env var value
+   - Warns about quotes, invalid format at startup
+   - Shows before/after quote stripping
+
+4. app.py
+   - App startup diagnostics
+   - Visual warnings (⚠️) for common issues
+   - Success indicators (✓) when key is valid
+
+VALIDATION TESTS:
+-----------------
+All tests pass:
+✓ Quoted keys ("sk-...") - Config rejects, LLMService strips
+✓ Whitespace keys (  sk-...  ) - Auto-stripped successfully
+✓ Invalid format (placeholder-key) - Rejected with clear error
+✓ Valid format (sk-proj-...) - Accepted and works
+
+DEPLOYMENT INSTRUCTIONS:
+------------------------
+1. Ensure .env file is NOT committed to Git (it's in .gitignore)
+2. Deploy updated code to Render
+3. Check Render logs for diagnostic output:
+   - Look for [GUNICORN STARTING] section
+   - Look for [CONFIG] Environment validation
+   - Look for ⚠️  WARNING messages
+4. If you see quotes warning:
+   → Go to Render Dashboard → Environment
+   → Edit OPENAI_API_KEY
+   → Remove ALL quotes from the value field
+   → Save (Render will auto-redeploy)
+5. Verify fix by checking logs for:
+   ✓ API key format looks valid
+
+RENDER ENVIRONMENT VARIABLE FORMAT:
+-----------------------------------
+In Render Dashboard → Environment, set:
+
+Key:   OPENAI_API_KEY
+Value: sk-proj-abc123...
+
+DO NOT include:
+- Quotes: "sk-proj-..." ❌
+- Equals: OPENAI_API_KEY=sk-proj-... ❌
+- Whitespace: "  sk-proj-...  " ❌
+
+TESTING LOCALLY:
+----------------
+# Test validation catches quoted key
+export OPENAI_API_KEY='"sk-test-abc123"'
+python3 app.py
+# Should show: "OPENAI_API_KEY contains quotes - remove them in Render dashboard"
+
+# Test auto-stripping in LLMService works
+# (Will initialize successfully despite quotes)
+
+FILES CHANGED:
+--------------
+- config.py (enhanced validation)
+- services/llm_service.py (auto-strip quotes/whitespace)
+- gunicorn_config.py (detailed startup diagnostics)
+- app.py (startup environment check)
+
+NEW FILES:
+----------
+- RENDER_DEBUG_GUIDE.md (comprehensive debugging guide)
+- DEPLOYMENT_FIX_SUMMARY.txt (this file)
+
+NEXT STEPS:
+-----------
+1. Commit these changes to Git
+2. Push to GitHub
+3. Render will auto-deploy (if auto-deploy enabled)
+   OR manually trigger deploy in Render dashboard
+4. Check Render logs for diagnostic output
+5. Fix environment variable if warnings appear
+6. Application should start successfully
+
+SUPPORT:
+--------
+If issues persist after fixing env var:
+- Check RENDER_DEBUG_GUIDE.md for detailed troubleshooting
+- Verify OpenAI API key is active at platform.openai.com
+- Check Render build logs for other errors
+- Try "Clear build cache & deploy" in Render

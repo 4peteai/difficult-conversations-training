@@ -10,8 +10,20 @@ class LLMService:
 
     def __init__(self, api_key: Optional[str] = None):
         self.api_key = api_key or Config.OPENAI_API_KEY
+        
         if not self.api_key:
+            import sys
+            print("[LLM_SERVICE] API key check failed:", file=sys.stderr)
+            print(f"  Config.OPENAI_API_KEY: {Config.OPENAI_API_KEY}", file=sys.stderr)
+            print(f"  api_key param: {api_key}", file=sys.stderr)
             raise ValueError("OpenAI API key is required")
+        
+        self.api_key = self.api_key.strip().strip('"').strip("'")
+        
+        if not self.api_key.startswith('sk-'):
+            import sys
+            print(f"[LLM_SERVICE] Invalid API key format: {self.api_key[:20]}", file=sys.stderr)
+            raise ValueError("Invalid OpenAI API key format (must start with 'sk-')")
 
         self.client = OpenAI(api_key=self.api_key)
         self.prompts_dir = os.path.join(

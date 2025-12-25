@@ -8,12 +8,23 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 # Debug logging for deployment
-print(f"[STARTUP] OPENAI_API_KEY present: {bool(Config.OPENAI_API_KEY)}")
+import sys
+raw_key = os.getenv('OPENAI_API_KEY')
+print(f"[APP STARTUP] Environment check:", file=sys.stderr)
+print(f"  Raw OPENAI_API_KEY in env: {bool(raw_key)}", file=sys.stderr)
+
+if raw_key:
+    if raw_key.startswith('"') or raw_key.startswith("'"):
+        print(f"  ⚠️  PROBLEM: API key has quotes: '{raw_key[:20]}'", file=sys.stderr)
+    elif not raw_key.startswith('sk-'):
+        print(f"  ⚠️  PROBLEM: Invalid key format: '{raw_key[:20]}'", file=sys.stderr)
+    else:
+        print(f"  ✓ API key format looks valid: '{raw_key[:15]}'", file=sys.stderr)
+
 if Config.OPENAI_API_KEY:
-    print(f"[STARTUP] API Key starts with: {Config.OPENAI_API_KEY[:10]}...")
+    print(f"  ✓ Config.OPENAI_API_KEY loaded successfully", file=sys.stderr)
 else:
-    print("[ERROR] OPENAI_API_KEY environment variable is not set!")
-    print(f"[DEBUG] Available env vars: {list(os.environ.keys())}")
+    print(f"  ✗ Config.OPENAI_API_KEY is None/empty", file=sys.stderr)
 
 csrf = CSRFProtect(app)
 

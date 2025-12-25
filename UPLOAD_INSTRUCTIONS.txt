@@ -1,0 +1,149 @@
+===============================================================================
+COMPLETE ARCHIVE - UPLOAD INSTRUCTIONS
+===============================================================================
+
+FILE LOCATION:
+  ~/Desktop/difficult-conversations-training-complete.zip (76 KB)
+
+THIS ARCHIVE INCLUDES:
+  ✓ All updated files with environment variable fixes
+  ✓ New gunicorn_config.py for debugging
+  ✓ Updated config.py with better error messages
+  ✓ Updated render.yaml with proper startup command
+  ✓ Updated app.py with debug logging
+  ✓ All source code, templates, and static files
+  ✓ Requirements.txt with gunicorn
+
+EXCLUDED (for security):
+  ✗ .env file (contains your API key)
+  ✗ venv/ folder
+  ✗ __pycache__/ folders
+  ✗ Cache files
+
+===============================================================================
+UPLOAD TO GITHUB - STEP BY STEP
+===============================================================================
+
+1. EXTRACT THE ZIP
+   - Double-click: difficult-conversations-training-complete.zip
+   - You'll get a folder with all files
+
+2. GO TO YOUR GITHUB REPOSITORY
+   - Visit: https://github.com/YOUR_USERNAME/YOUR_REPO_NAME
+
+3. DELETE OLD FILES (Recommended for clean upload)
+   - Click on each file/folder
+   - Click trash icon
+   - Commit: "Remove old files"
+
+4. UPLOAD ALL NEW FILES
+   - Click "Add file" → "Upload files"
+   - Drag the ENTIRE extracted folder contents
+   - Commit message: "Complete update with Render fixes"
+   - Click "Commit changes"
+   - Wait for upload to complete
+
+5. VERIFY UPLOAD
+   - Refresh GitHub page
+   - Check you see all folders: controllers/, models/, services/, templates/, static/, prompts/, tests/
+   - Check you see all files: app.py, config.py, render.yaml, gunicorn_config.py, requirements.txt
+   - VERIFY: .env is NOT visible (only .env.example should be there)
+
+===============================================================================
+DEPLOY TO RENDER
+===============================================================================
+
+CRITICAL: FIX YOUR OPENAI_API_KEY IN RENDER
+
+1. GO TO RENDER DASHBOARD
+   - Visit: https://dashboard.render.com
+   - Select your service: "difficult-conversations-training"
+
+2. FIX THE API KEY (Most Important!)
+   - Click "Environment" tab
+   - Find OPENAI_API_KEY
+   - Click Edit
+   
+   MAKE SURE IT LOOKS LIKE THIS:
+   ✓ sk-proj-abc123def456...
+   
+   NOT LIKE THIS:
+   ✗ "sk-proj-abc123def456..."  (has quotes)
+   ✗ Your actual OpenAI API key  (placeholder text)
+   
+   - If wrong, paste your REAL OpenAI key (no quotes, no spaces)
+   - Click Save
+
+3. FORCE REDEPLOY
+   - Click "Manual Deploy" tab
+   - Click "Clear build cache & deploy"
+   - Wait 5-10 minutes
+
+4. CHECK LOGS
+   - Click "Logs" tab
+   - Look for:
+   
+   SUCCESS - You'll see:
+   ===========================================================
+   GUNICORN STARTING - Environment Check:
+     OPENAI_API_KEY: SET
+     OPENAI_API_KEY length: 164
+     OPENAI_API_KEY prefix: sk-proj-...
+   ===========================================================
+   [STARTUP] OPENAI_API_KEY present: True
+   
+   FAILURE - You'll see:
+   OPENAI_API_KEY: NOT SET
+   [ERROR] OPENAI_API_KEY is not set!
+
+5. IF IT WORKS
+   - Your app will be live at: https://your-service-name.onrender.com
+   - Test it by clicking "Start Module"
+
+6. IF IT STILL FAILS
+   - Copy the entire log output
+   - The logs will show exactly what's wrong
+   - Share the logs for more help
+
+===============================================================================
+GET YOUR OPENAI API KEY
+===============================================================================
+
+If you need a new OpenAI API key:
+
+1. Go to: https://platform.openai.com/api-keys
+2. Sign in to your OpenAI account
+3. Click "+ Create new secret key"
+4. Name it: "Difficult Conversations Training"
+5. Click "Create secret key"
+6. COPY THE KEY IMMEDIATELY (shown only once!)
+7. Paste it into Render's OPENAI_API_KEY environment variable
+
+===============================================================================
+TROUBLESHOOTING
+===============================================================================
+
+ISSUE: "Error starting module: OpenAI API key is required"
+FIX: Your OPENAI_API_KEY in Render is wrong or missing
+     - Go to Environment tab in Render
+     - Check the value (remove quotes if present)
+     - Make sure it's your actual key from OpenAI
+
+ISSUE: App shows 404 or doesn't load
+FIX: Check Render logs for errors
+     - The new debug logging will tell you exactly what's wrong
+
+ISSUE: "Application failed to respond"
+FIX: Wait longer (free tier takes 30-60 seconds to wake up)
+     OR check if deployment completed successfully
+
+===============================================================================
+
+READY TO UPLOAD!
+
+Your complete, updated archive is on your Desktop:
+  difficult-conversations-training-complete.zip
+
+Extract it and upload to GitHub following the steps above!
+
+===============================================================================

@@ -532,3 +532,43 @@
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/config.py', reloading
+[STARTUP] OPENAI_API_KEY present: True
+[STARTUP] API Key starts with: sk-proj-d_...
+ * Restarting with stat
+[CONFIG] Environment validation:
+  FLASK_ENV: development
+  Raw OPENAI_API_KEY present: True
+  Raw key length: 164
+  Raw key starts with: 'sk-proj-d_qc9dL'
+  Raw key ends with: 'CjWIMIjpAA'
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/services/llm_service.py', reloading
+[STARTUP] OPENAI_API_KEY present: True
+[STARTUP] API Key starts with: sk-proj-d_...
+ * Restarting with stat
+[CONFIG] Environment validation:
+  FLASK_ENV: development
+  Raw OPENAI_API_KEY present: True
+  Raw key length: 164
+  Raw key starts with: 'sk-proj-d_qc9dL'
+  Raw key ends with: 'CjWIMIjpAA'
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
+ * Detected change in '/private/var/folders/q5/5wg_jdnn0xd4c_m3ss3nk9jh0000gn/T/zenflow/worktrees/new-task-2127/gunicorn_config.py', reloading
+[STARTUP] OPENAI_API_KEY present: True
+[STARTUP] API Key starts with: sk-proj-d_...
+ * Restarting with stat
+[APP STARTUP] Environment check:
+  Raw OPENAI_API_KEY in env: True
+  ✓ API key format looks valid: 'sk-proj-d_qc9dL'
+  ✓ Config.OPENAI_API_KEY loaded successfully
+[CONFIG] Environment validation:
+  FLASK_ENV: development
+  Raw OPENAI_API_KEY present: True
+  Raw key length: 164
+  Raw key starts with: 'sk-proj-d_qc9dL'
+  Raw key ends with: 'CjWIMIjpAA'
+ * Debugger is active!
+ * Debugger PIN: 253-154-195
